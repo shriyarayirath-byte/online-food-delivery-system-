@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foodie - Online Food Delivery</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#fff8f2;
+  color:#222;
+}
+
+header{
+  background:#ff5a36;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+
+header h1{
+  font-size:28px;
+}
+
+header p{
+  margin-top:6px;
+}
+
+.hero{
+  padding:25px 18px;
+  text-align:center;
+  background:#ffe1d5;
+}
+
+.hero h2{
+  font-size:25px;
+  margin-bottom:10px;
+}
+
+.search{
+  width:90%;
+  padding:13px;
+  border:none;
+  border-radius:25px;
+  margin-top:15px;
+  font-size:15px;
+}
+
+.categories{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding:18px;
+}
+
+.categories button{
+  border:none;
+  background:white;
+  padding:10px 18px;
+  border-radius:20px;
+  box-shadow:0 2px 8px #ddd;
+  white-space:nowrap;
+}
+
+.container{
+  padding:10px 18px 30px;
+}
+
+.container h2{
+  margin-bottom:15px;
+}
+
+.foods{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.card{
+  background:white;
+  border-radius:15px;
+  padding:12px;
+  box-shadow:0 3px 12px #ddd;
+}
+
+.food-img{
+  height:110px;
+  background:#ffe5d9;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:55px;
+}
+
+.card h3{
+  margin-top:10px;
+  font-size:17px;
+}
+
+.card p{
+  color:#777;
+  font-size:13px;
+  margin:5px 0;
+}
+
+.price{
+  font-weight:bold;
+  color:#ff5a36;
+}
+
+.add{
+  width:100%;
+  border:none;
+  background:#ff5a36;
+  color:white;
+  padding:9px;
+  border-radius:8px;
+  margin-top:8px;
+}
+
+.cart{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:white;
+  padding:15px 20px;
+  box-shadow:0 -3px 12px #ccc;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.cart button{
+  background:#ff5a36;
+  color:white;
+  border:none;
+  padding:11px 18px;
+  border-radius:20px;
+}
+
+footer{
+  padding:70px 20px;
+  text-align:center;
+  background:#222;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🍔 Foodie</h1>
+  <p>Delicious food delivered to your door</p>
+</header>
+
+<section class="hero">
+  <h2>Hungry? We got you! 😋</h2>
+  <p>Order your favourite food online</p>
+  <input class="search" type="text" placeholder="🔍 Search for food...">
+</section>
+
+<div class="categories">
+  <button>🍕 Pizza</button>
+  <button>🍔 Burger</button>
+  <button>🍗 Chicken</button>
+  <button>🍜 Noodles</button>
+  <button>🍰 Desserts</button>
+</div>
+
+<section class="container">
+  <h2>Popular Foods 🔥</h2>
+
+  <div class="foods">
+
+    <div class="card">
+      <div class="food-img">🍕</div>
+      <h3>Cheese Pizza</h3>
+      <p>Fresh cheesy pizza</p>
+      <span class="price">₹199</span>
+      <button class="add" onclick="addCart(199)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <div class="food-img">🍔</div>
+      <h3>Chicken Burger</h3>
+      <p>Juicy chicken burger</p>
+      <span class="price">₹149</span>
+      <button class="add" onclick="addCart(149)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <div class="food-img">🍗</div>
+      <h3>Fried Chicken</h3>
+      <p>Crispy fried chicken</p>
+      <span class="price">₹229</span>
+      <button class="add" onclick="addCart(229)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <div class="food-img">🍜</div>
+      <h3>Veg Noodles</h3>
+      <p>Hot and tasty noodles</p>
+      <span class="price">₹129</span>
+      <button class="add" onclick="addCart(129)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <div class="food-img">🍰</div>
+      <h3>Chocolate Cake</h3>
+      <p>Soft chocolate cake</p>
+      <span class="price">₹179</span>
+      <button class="add" onclick="addCart(179)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <div class="food-img">🥤</div>
+      <h3>Fresh Juice</h3>
+      <p>Refreshing fruit juice</p>
+      <span class="price">₹89</span>
+      <button class="add" onclick="addCart(89)">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+<div class="cart">
+  <div>
+    🛒 Cart:
