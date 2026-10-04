@@ -57,3 +57,389 @@ padding:13px 16px;box-shadow:0 -3px 12px #bbb;
 display:flex;justify-content:space-between;align-items:center;z-index:20
 }
 .cart-bar button,.order-btn{
+background:#ff5722;color:white;border:0;padding:12px 18px;
+border-radius:22px
+}
+
+.cart-item{
+display:flex;justify-content:space-between;
+padding:10px 0;border-bottom:1px solid #eee
+}
+.qty button{
+border:0;background:#ff5722;color:white;
+width:25px;height:25px;border-radius:5px
+}
+
+#cartBox,#checkout{display:none}
+
+.payment{
+margin-top:12px
+}
+.payment label{
+display:block;background:#fff4ef;padding:12px;
+margin:8px 0;border-radius:8px
+}
+
+.order-btn{
+width:100%;border-radius:8px;margin-top:12px;font-size:16px
+}
+
+footer{
+background:#222;color:white;text-align:center;padding:30px 15px;margin-top:30px
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🍴 Online Food Delivery System</h1>
+<p>Fresh • Fast • Delicious</p>
+</header>
+
+<section class="hero">
+<h2>What are you craving? 😋</h2>
+<p>Order your favourite food online</p>
+<input class="search" id="search" placeholder="🔍 Search food..."
+onkeyup="searchFood()">
+</section>
+
+<div class="location">
+<b>📍 Delivery Location</b>
+<input id="location" placeholder="Enter your delivery location">
+</div>
+
+<div class="categories">
+<button class="active" onclick="category('all',this)">All</button>
+<button onclick="category('fast',this)">🍔 Fast Food</button>
+<button onclick="category('restaurant',this)">🍛 Restaurant Food</button>
+<button onclick="category('home',this)">🏠 Homely Food</button>
+<button onclick="category('snack',this)">☕ Tea & Snacks</button>
+</div>
+
+<section class="container">
+<h2>🍽️ Our Menu</h2>
+
+<div class="foods">
+
+<!-- FAST FOOD -->
+
+<div class="card" data-cat="fast" data-name="Chicken Burger">
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Chicken Burger</h3><p>Juicy chicken burger</p>
+<span class="price">₹149</span>
+<button class="add" onclick="add('Chicken Burger',149)">Add to Cart</button>
+</div></div>
+
+<div class="card" data-cat="fast" data-name="Shawarma">
+<img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Shawarma</h3><p>Chicken shawarma</p>
+<span class="price">₹120</span>
+<button class="add" onclick="add('Shawarma',120)">Add to Cart</button>
+</div></div>
+
+<div class="card" data-cat="fast" data-name="Loaded Fries">
+<img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Loaded Fries</h3><p>Crispy loaded fries</p>
+<span class="price">₹130</span>
+<button class="add" onclick="add('Loaded Fries',130)">Add to Cart</button>
+</div></div>
+
+<div class="card" data-cat="fast" data-name="Chicken Roll">
+<img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Chicken Roll</h3><p>Spicy chicken roll</p>
+<span class="price">₹110</span>
+<button class="add" onclick="add('Chicken Roll',110)">Add to Cart</button>
+</div></div>
+
+<div class="card" data-cat="fast" data-name="Chicken Wings">
+<img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Chicken Wings</h3><p>Crispy chicken wings</p>
+<span class="price">₹180</span>
+<button class="add" onclick="add('Chicken Wings',180)">Add to Cart</button>
+</div></div>
+
+<!-- RESTAURANT -->
+
+<div class="card" data-cat="restaurant" data-name="Chicken Biriyani">
+<img src="https://images.unsplash.com/photo-1563379091339-03246963d51a?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Chicken Biriyani</h3><p>Traditional biriyani</p>
+<span class="price">₹220</span>
+<button class="add" onclick="add('Chicken Biriyani',220)">Add to Cart</button>
+</div></div>
+
+<div class="card" data-cat="restaurant" data-name="Fried Rice">
+<img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Chicken Fried Rice</h3><p>Hot fried rice</p>
+<span class="price">₹180</span>
+<button class="add" onclick="add('Chicken Fried Rice',180)">Add to Cart</button>
+</div></div>
+
+<div class="card" data-cat="restaurant" data-name="Mandi">
+<img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Chicken Mandi</h3><p>Arabic style mandi</p>
+<span class="price">₹250</span>
+<button class="add" onclick="add('Chicken Mandi',250)">Add to Cart</button>
+</div></div>
+
+<div class="card" data-cat="restaurant" data-name="Noodles">
+<img src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Noodles</h3><p>Spicy noodles</p>
+<span class="price">₹150</span>
+<button class="add" onclick="add('Noodles',150)">Add to Cart</button>
+</div></div>
+
+<div class="card" data-cat="restaurant" data-name="Dragon Chicken">
+<img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Dragon Chicken</h3><p>Spicy crispy chicken</p>
+<span class="price">₹210</span>
+<button class="add" onclick="add('Dragon Chicken',210)">Add to Cart</button>
+</div></div>
+
+<div class="card" data-cat="restaurant" data-name="Beef Fry">
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Beef Fry</h3><p>Kerala style beef fry</p>
+<span class="price">₹230</span>
+<button class="add" onclick="add('Beef Fry',230)">Add to Cart</button>
+</div></div>
+
+<!-- HOME FOOD -->
+
+<div class="card" data-cat="home" data-name="Appam Stew">
+<img src="https://images.unsplash.com/photo-1626132647523-66f5bf380027?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Appam & Stew</h3><p>Homely Kerala breakfast</p>
+<span class="price">₹140</span>
+<button class="add" onclick="add('Appam & Stew',140)">Add to Cart</button>
+</div></div>
+
+<div class="card" data-cat="home" data-name="Kanji Payar">
+<img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Kanji & Payar</h3><p>Simple homely food</p>
+<span class="price">₹100</span>
+<button class="add" onclick="add('Kanji & Payar',100)">Add to Cart</button>
+</div></div>
+
+<div class="card" data-cat="home" data-name="Pothichoru">
+<img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Pothichoru</h3><p>Traditional packed meal</p>
+<span class="price">₹130</span>
+<button class="add" onclick="add('Pothichoru',130)">Add to Cart</button>
+</div></div>
+
+<div class="card" data-cat="home" data-name="Puttu Kadala">
+<img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Puttu & Kadala</h3><p>Kerala favourite</p>
+<span class="price">₹100</span>
+<button class="add" onclick="add('Puttu & Kadala',100)">Add to Cart</button>
+</div></div>
+
+<!-- SNACKS -->
+
+<div class="card" data-cat="snack" data-name="Tea">
+<img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Tea</h3><p>Hot Kerala tea</p>
+<span class="price">₹20</span>
+<button class="add" onclick="add('Tea',20)">Add to Cart</button>
+</div></div>
+
+<div class="card" data-cat="snack" data-name="Samosa">
+<img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Samosa</h3><p>Crispy evening snack</p>
+<span class="price">₹30</span>
+<button class="add" onclick="add('Samosa',30)">Add to Cart</button>
+</div></div>
+
+<div class="card" data-cat="snack" data-name="Pazhampori">
+<img src="https://images.unsplash.com/photo-1626776876729-bab436f6a4a0?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Pazhampori</h3><p>Kerala banana fritter</p>
+<span class="price">₹40</span>
+<button class="add" onclick="add('Pazhampori',40)">Add to Cart</button>
+</div></div>
+
+<div class="card" data-cat="snack" data-name="Parippu Vada">
+<img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=600&q=80">
+<div class="card-content">
+<h3>Parippu Vada</h3><p>Crispy dal snack</p>
+<span class="price">₹30</span>
+<button class="add" onclick="add('Parippu Vada',30)">Add to Cart</button>
+</div></div>
+
+</div>
+</section>
+
+<div id="cartBox">
+<h2>🛒 Your Cart</h2>
+<div id="cartItems"></div>
+<hr><br>
+<p>Subtotal: ₹<b id="subtotal">0</b></p>
+<p>Delivery Fee: ₹40</p>
+<h3>Grand Total: ₹<b id="grand">40</b></h3>
+</div>
+
+<div class="checkout">
+<h2>📦 Checkout</h2>
+
+<input id="customer" placeholder="Your Name">
+<input id="phone" placeholder="Phone Number">
+<input id="address" placeholder="Delivery Address">
+
+<div class="payment">
+<b>💳 Payment Method</b>
+
+<label>
+<input type="radio" name="payment" value="Cash on Delivery" checked>
+💵 Cash on Delivery
+</label>
+
+<label>
+<input type="radio" name="payment" value="Online Payment">
+💳 Online Payment (UPI / Card / Net Banking)
+</label>
+</div>
+
+<button class="order-btn" onclick="placeOrder()">
+Place Order
+</button>
+</div>
+
+<div class="cart-bar">
+<div>🛒 <b id="count">0</b> Items<br>₹<b id="total">0</b></div>
+<button onclick="openCart()">View Cart</button>
+</div>
+
+<footer>
+<h3>🍴 Online Food Delivery System</h3>
+<p>Fresh • Fast • Delicious</p>
+<p>© 2026</p>
+</footer>
+
+<script>
+let cart=[];
+
+function add(name,price){
+let item=cart.find(x=>x.name===name);
+if(item){item.qty++}
+else{cart.push({name,price,qty:1})}
+update();
+alert(name+" added to cart 🛒");
+}
+
+function update(){
+let count=0,total=0;
+cart.forEach(x=>{
+count+=x.qty;
+total+=x.price*x.qty;
+});
+
+document.getElementById("count").innerText=count;
+document.getElementById("total").innerText=total;
+document.getElementById("subtotal").innerText=total;
+document.getElementById("grand").innerText=total+(count?40:0);
+
+let html="";
+
+cart.forEach((x,i)=>{
+html+=`
+<div class="cart-item">
+<div><b>${x.name}</b><br>₹${x.price} × ${x.qty}</div>
+<div class="qty">
+<button onclick="qty(${i},-1)">−</button>
+${x.qty}
+<button onclick="qty(${i},1)">+</button>
+</div>
+</div>`;
+});
+
+document.getElementById("cartItems").innerHTML=html;
+}
+
+function qty(i,n){
+cart[i].qty+=n;
+if(cart[i].qty<=0)cart.splice(i,1);
+update();
+}
+
+function openCart(){
+document.getElementById("cartBox").style.display="block";
+document.querySelector(".checkout").style.display="block";
+update();
+window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"});
+}
+
+function placeOrder(){
+
+if(cart.length===0){
+alert("Please add food to cart!");
+return;
+}
+
+let name=document.getElementById("customer").value;
+let phone=document.getElementById("phone").value;
+let address=document.getElementById("address").value;
+let payment=document.querySelector('input[name="payment"]:checked').value;
+
+if(!name||!phone||!address){
+alert("Please fill all delivery details.");
+return;
+}
+
+let orderId="FD"+Date.now().toString().slice(-8);
+let total=cart.reduce((sum,x)=>sum+x.price*x.qty,0)+40;
+
+alert(
+"🎉 ORDER PLACED SUCCESSFULLY!\n\n"+
+"Order ID: "+orderId+"\n"+
+"Customer: "+name+"\n"+
+"Payment: "+payment+"\n"+
+"Total: ₹"+total
+);
+
+cart=[];
+update();
+}
+
+function category(cat,btn){
+
+document.querySelectorAll(".categories button")
+.forEach(x=>x.classList.remove("active"));
+
+btn.classList.add("active");
+
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display=
+cat==="all"||card.dataset.cat===cat?"block":"none";
+});
+}
+
+function searchFood(){
+
+let text=document.getElementById("search").value.toLowerCase();
+
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display=
+card.dataset.name.toLowerCase().includes(text)
+?"block":"none";
+});
+}
+</script>
+
+</body>
+  </html>
