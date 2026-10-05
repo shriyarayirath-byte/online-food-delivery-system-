@@ -170,9 +170,990 @@ header h1{
 .checkout input{
     width:100%;
     padding:12px;
-    margin:8px 0
-    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Pothichoru.jpg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Puttu_with_Kadala.JPG">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Aapam-Stew.jpg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Biriyani_kerala.jpg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Chicken_Mandi.jpg">
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:7px;
+}
+
+.payment{
+    margin:15px 0;
+}
+
+.payment label{
+    display:block;
+    padding:8px;
+}
+
+.order-btn{
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:8px;
+    background:#28a745;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#222;
+    color:white;
+    margin-top:20px;
+}
+
+.no-result{
+    text-align:center;
+    padding:30px;
+    font-size:18px;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🍔 Online Food Delivery System</h1>
+
+<p>Order your favourite food online</p>
+
+<div class="search-box">
+<input
+type="text"
+id="search"
+placeholder="Search food..."
+onkeyup="searchFood()">
+</div>
+
+</header>
+
+
+<div class="location">
+
+<h3>📍 Delivery Location</h3>
+
+<input
+type="text"
+id="location"
+placeholder="Enter your delivery location">
+
+</div>
+
+
+<div class="categories">
+
+<button onclick="category('All',this)">All</button>
+
+<button onclick="category('Fast Food',this)">
+Fast Food
+</button>
+
+<button onclick="category('Restaurant Food',this)">
+Restaurant Food
+</button>
+
+<button onclick="category('Homely Food',this)">
+Homely Food
+</button>
+
+<button onclick="category('Tea & Snacks',this)">
+Tea & Snacks
+</button>
+
+</div>
+
+
+<div class="menu" id="menu">
+
+
+<!-- FAST FOOD -->
+
+<div class="card" data-category="Fast Food">
+
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Chicken Burger</h3>
+
+<div class="price">₹120</div>
+
+<button onclick="add('Chicken Burger',120)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Fast Food">
+
+<img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Shawarma</h3>
+
+<div class="price">₹100</div>
+
+<button onclick="add('Shawarma',100)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Fast Food">
+
+<img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Loaded Fries</h3>
+
+<div class="price">₹90</div>
+
+<button onclick="add('Loaded Fries',90)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Fast Food">
+
+<img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Chicken Roll</h3>
+
+<div class="price">₹110</div>
+
+<button onclick="add('Chicken Roll',110)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Fast Food">
+
+<img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>French Fries</h3>
+
+<div class="price">₹70</div>
+
+<button onclick="add('French Fries',70)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Fast Food">
+
+<img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Chicken Wings</h3>
+
+<div class="price">₹150</div>
+
+<button onclick="add('Chicken Wings',150)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Fast Food">
+
+<img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Sandwich</h3>
+
+<div class="price">₹80</div>
+
+<button onclick="add('Sandwich',80)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Fast Food">
+
+<img src="https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Chicken Nuggets</h3>
+
+<div class="price">₹130</div>
+
+<button onclick="add('Chicken Nuggets',130)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<!-- RESTAURANT FOOD -->
+
+
+<div class="card" data-category="Restaurant Food">
+
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/South%20Indian%20Biriyani%20-%20Kerala%20-%20IMG%202392.jpg">
+
+<div class="card-content">
+
+<h3>Chicken Biriyani</h3>
+
+<div class="price">₹180</div>
+
+<button onclick="add('Chicken Biriyani',180)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Restaurant Food">
+
+<img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Fried Rice</h3>
+
+<div class="price">₹140</div>
+
+<button onclick="add('Fried Rice',140)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Restaurant Food">
+
+<img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Mandi</h3>
+
+<div class="price">₹220</div>
+
+<button onclick="add('Mandi',220)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Restaurant Food">
+
+<img src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Noodles</h3>
+
+<div class="price">₹130</div>
+
+<button onclick="add('Noodles',130)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Restaurant Food">
+
+<img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Dragon Chicken</h3>
+
+<div class="price">₹180</div>
+
+<button onclick="add('Dragon Chicken',180)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Restaurant Food">
+
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Beef Fry</h3>
+
+<div class="price">₹170</div>
+
+<button onclick="add('Beef Fry',170)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Restaurant Food">
+
+<img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Beef Dry Fry</h3>
+
+<div class="price">₹180</div>
+
+<button onclick="add('Beef Dry Fry',180)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Restaurant Food">
+
+<img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Chicken 65</h3>
+
+<div class="price">₹160</div>
+
+<button onclick="add('Chicken 65',160)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Restaurant Food">
+
+<img src="https://images.unsplash.com/photo-1626132647523-66f5bf380027?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Porotta + Chicken Curry</h3>
+
+<div class="price">₹150</div>
+
+<button onclick="add('Porotta + Chicken Curry',150)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<!-- HOMELY FOOD -->
+
+
+<div class="card" data-category="Homely Food">
+
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aapam-Stew.jpg">
+
+<div class="card-content">
+
+<h3>Appam + Stew</h3>
+
+<div class="price">₹100</div>
+
+<button onclick="add('Appam + Stew',100)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Homely Food">
+
+<img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Kanji + Payar</h3>
+
+<div class="price">₹80</div>
+
+<button onclick="add('Kanji + Payar',80)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Homely Food">
+
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pothichoru.jpg">
+
+<div class="card-content">
+
+<h3>Pothichoru</h3>
+
+<div class="price">₹120</div>
+
+<button onclick="add('Pothichoru',120)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Homely Food">
+
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Closeup%20shot%20of%20Puttu%20with%20Gram%20Curry%20-%20Kerala%20-%20IMG%2020210329%20091548.jpg">
+
+<div class="card-content">
+
+<h3>Puttu + Kadala</h3>
+
+<div class="price">₹90</div>
+
+<button onclick="add('Puttu + Kadala',90)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Homely Food">
+
+<img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Chapathi + Curry</h3>
+
+<div class="price">₹100</div>
+
+<button onclick="add('Chapathi + Curry',100)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Homely Food">
+
+<img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Dosa + Sambar</h3>
+
+<div class="price">₹90</div>
+
+<button onclick="add('Dosa + Sambar',90)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<!-- TEA & SNACKS -->
+
+
+<div class="card" data-category="Tea & Snacks">
+
+<img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Tea</h3>
+
+<div class="price">₹20</div>
+
+<button onclick="add('Tea',20)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Tea & Snacks">
+
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Samosa%2001.jpg">
+
+<div class="card-content">
+
+<h3>Samosa</h3>
+
+<div class="price">₹25</div>
+
+<button onclick="add('Samosa',25)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Tea & Snacks">
+
+<img src="https://images.unsplash.com/photo-1626776876729-bab436f6a4a0?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Pazhampori</h3>
+
+<div class="price">₹30</div>
+
+<button onclick="add('Pazhampori',30)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Tea & Snacks">
+
+<img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Uzhunnu Vada</h3>
+
+<div class="price">₹25</div>
+
+<button onclick="add('Uzhunnu Vada',25)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Tea & Snacks">
+
+<img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Parippu Vada</h3>
+
+<div class="price">₹25</div>
+
+<button onclick="add('Parippu Vada',25)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+
+<div class="card" data-category="Tea & Snacks">
+
+<img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80">
+
+<div class="card-content">
+
+<h3>Cutlet</h3>
+
+<div class="price">₹35</div>
+
+<button onclick="add('Cutlet',35)">
+Add to Cart
+</button>
+
+</div>
+</div>
+
+</div>
+
+
+<!-- CART -->
+
+<div class="cart">
+
+<h2>🛒 Your Cart</h2>
+
+<div id="cartItems">
+<p>Your cart is empty.</p>
+</div>
+
+<div class="total">
+
+<p>Subtotal: ₹<span id="subtotal">0</span></p>
+
+<p>Delivery Fee: ₹<span id="delivery">40</span></p>
+
+<h3>Grand Total: ₹<span id="grandTotal">0</span></h3>
+
+</div>
+
+</div>
+
+
+<!-- CHECKOUT -->
+
+<div class="checkout">
+
+<h2>🧾 Checkout</h2>
+
+<input
+type="text"
+id="customerName"
+placeholder="Enter your name">
+
+<input
+type="tel"
+id="phone"
+placeholder="Enter phone number">
+
+<h3>Payment Method</h3>
+
+<div class="payment">
+
+<label>
+<input
+type="radio"
+name="payment"
+value="Cash on Delivery"
+checked>
+Cash on Delivery
+</label>
+
+<label>
+<input
+type="radio"
+name="payment"
+value="Online Payment">
+Online Payment
+</label>
+
+<label>
+<input
+type="radio"
+name="payment"
+value="UPI">
+UPI
+</label>
+
+<label>
+<input
+type="radio"
+name="payment"
+value="Card">
+Card
+</label>
+
+<label>
+<input
+type="radio"
+name="payment"
+value="Net Banking">
+Net Banking
+</label>
+
+</div>
+
+<button class="order-btn" onclick="placeOrder()">
+Place Order
+</button>
+
+</div>
+
+
+<footer>
+
+<p>© 2026 Online Food Delivery System</p>
+
+<p>Fresh Food • Fast Delivery • Easy Payment</p>
+
+</footer>
+
+
+<script>
+
+let cart=[];
+
+
+/* ADD TO CART */
+
+function add(name,price){
+
+let existing=cart.find(item=>item.name===name);
+
+if(existing){
+
+existing.qty++;
+
+}else{
+
+cart.push({
+name:name,
+price:price,
+qty:1
+});
+
+}
+
+update();
+
+alert(name+" added to cart!");
+
+}
+
+
+/* UPDATE CART */
+
+function update(){
+
+let cartItems=document.getElementById("cartItems");
+
+let subtotal=0;
+
+if(cart.length===0){
+
+cartItems.innerHTML="<p>Your cart is empty.</p>";
+
+}else{
+
+cartItems.innerHTML="";
+
+cart.forEach((item,index)=>{
+
+subtotal += item.price * item.qty;
+
+let div=document.createElement("div");
+
+div.className="cart-item";
+
+div.innerHTML=`
+
+<div>
+
+<strong>${item.name}</strong>
+
+<br>
+
+₹${item.price} × ${item.qty}
+
+</div>
+
+<div class="qty">
+
+<button onclick="qty(${index},-1)">−</button>
+
+<span> ${item.qty} </span>
+
+<button onclick="qty(${index},1)">+</button>
+
+</div>
+
+`;
+
+cartItems.appendChild(div);
+
+});
+
+}
+
+document.getElementById("subtotal").innerText=subtotal;
+
+let delivery=cart.length>0 ? 40 : 0;
+
+document.getElementById("delivery").innerText=delivery;
+
+document.getElementById("grandTotal").innerText=
+subtotal+delivery;
+
+}
+
+
+/* QUANTITY */
+
+function qty(index,value){
+
+cart[index].qty += value;
+
+if(cart[index].qty<=0){
+
+cart.splice(index,1);
+
+}
+
+update();
+
+}
+
+
+/* CATEGORY FILTER */
+
+function category(cat,btn){
+
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+if(cat==="All" || card.dataset.category===cat){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+}
+
+
+/* SEARCH */
+
+function searchFood(){
+
+let text=document
+.getElementById("search")
+.value
+.toLowerCase();
+
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+let name=card
+.querySelector("h3")
+.innerText
+.toLowerCase();
+
+if(name.includes(text)){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+}
+
+
+/* PLACE ORDER */
+
+function placeOrder(){
+
+if(cart.length===0){
+
+alert("Please add food items to cart first.");
+
+return;
+
+}
+
+let name=document
+.getElementById("customerName")
+.value;
+
+let phone=document
+.getElementById("phone")
+.value;
+
+let location=document
+.getElementById("location")
+.value;
+
+let payment=document
+.querySelector('input[name="payment"]:checked')
+.value;
+
+
+if(name==="" || phone==="" || location===""){
+
+alert("Please enter your name, phone number and delivery location.");
+
+return;
+
+}
+
+
+let orderId=
+"FD"+Date.now().toString().slice(-8);
+
+
+let subtotal=cart.reduce(
+(sum,item)=>sum+item.price*item.qty,
+0
+);
+
+let total=subtotal+40;
+
+
+alert(
+
+"🎉 ORDER PLACED SUCCESSFULLY!\n\n"+
+"Order ID: "+orderId+"\n"+
+"Customer: "+name+"\n"+
+"Payment: "+payment+"\n"+
+"Delivery Location: "+location+"\n"+
+"Total Amount: ₹"+total
+
+);
+
+
+cart=[];
+
+update();
+
+document.getElementById("customerName").value="";
+
+document.getElementById("phone").value="";
+
+document.getElementById("location").value="";
+
+}
+
+update();
+
+</script>
+
+</body>
+    </html>
